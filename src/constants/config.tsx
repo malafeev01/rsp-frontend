@@ -1,5 +1,5 @@
 const prod = {
-  WS_URL: "wss://rockscissorspaper:9000",
+  WS_URL: "wss://rockscissorspaper.online/ws",
 };
 const dev = {
   WS_URL: "ws://localhost:9000",
