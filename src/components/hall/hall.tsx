@@ -21,8 +21,8 @@ export function Hall() {
     api.stat().then((data) => {
       setStat(data);
     });
-  
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const tableRows = [];

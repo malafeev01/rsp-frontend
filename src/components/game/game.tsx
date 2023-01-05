@@ -11,7 +11,13 @@ import { GameScore } from "./game-score/game-score";
 import { GameType, RoundType } from "./game.type";
 import { GameResults } from "./game-results/game-results";
 import { config } from "../../constants/config";
-import { PAPER, ROCK, SCISSORS, TIE, GAME_FINISHED } from "../../constants/constants";
+import {
+  PAPER,
+  ROCK,
+  SCISSORS,
+  TIE,
+  GAME_FINISHED,
+} from "../../constants/constants";
 
 export function Game() {
   // Initializing initial state of the game
@@ -62,18 +68,18 @@ export function Game() {
     reconnectAttempts: 10,
     reconnectInterval: 300,
   });
-  
+
   useEffect(() => {
     api
       .game(gameId)
       .then((data) => {
         setGame(data);
-        
+
         // In the case when 'nickname' is not stored in sessionStorage, it means you need to re-join the game.
         if (!nickname && game.state !== GAME_FINISHED) {
           navigate(`/join/${gameId}`);
         }
-        
+
         // It's needed to save current round in the session storage, because it can be switched to the
         // next round on the server side unexpectedly and we need to have a chance to show round result.
         sessionStorage.setItem(
@@ -85,9 +91,9 @@ export function Game() {
 
     // Sending a message to WS server to register the connection
     sendJsonMessage({ action: "add", nickname: nickname });
-    
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); 
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const makeAction = (action: string) => {
     api
@@ -128,16 +134,15 @@ export function Game() {
 
   const getRoundWinnerLabel = (roundWinner: string) => {
     if (roundWinner === TIE) {
-      return "It's a tie. "
+      return "It's a tie. ";
     }
 
     if (roundWinner === nickname) {
       return "You won the round. ";
-    }
-    else {
+    } else {
       return "You lost the round. ";
     }
-  }
+  };
 
   // Getting previous round winner and opponent action in case of showing round result.
   let roundWinner = (game.rounds[game.current_round - 1] as RoundType)?.winner;
@@ -174,7 +179,7 @@ export function Game() {
         {showRoundResults && (
           <div className="round-results">
             <div data-testid="round_res_label">
-              { getRoundWinnerLabel(roundWinner) }
+              {getRoundWinnerLabel(roundWinner)}
               Your opponent has shown '{previousOpponentAction}'.
             </div>
             <div>Press "Next" to continue.</div>
@@ -192,12 +197,10 @@ export function Game() {
         <div className="game-flex-center">
           <div
             data-testid="game_actions_helper"
-            className={
-              classNames({
-                "game-actions-helper": !showRoundResults,
-                "game-actions-helper-hide": showRoundResults
-              })
-            }
+            className={classNames({
+              "game-actions-helper": !showRoundResults,
+              "game-actions-helper-hide": showRoundResults,
+            })}
           >
             {!selectedAction
               ? "Please choose the action"
@@ -205,12 +208,10 @@ export function Game() {
           </div>
 
           <div
-            className={
-              classNames({
-                "game-actions-container": true,
-                "disabled-container": showRoundResults
-              })
-            }
+            className={classNames({
+              "game-actions-container": true,
+              "disabled-container": showRoundResults,
+            })}
           >
             <div
               data-testid="rock_action"

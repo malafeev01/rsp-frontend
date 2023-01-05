@@ -7,7 +7,7 @@ export default class Api {
       headers: HEADERS,
       body: JSON.stringify({ nickname: nickname, max_rounds: maxRounds }),
     };
-    return fetch("/game", requestOptions).then((res) => res.json());
+    return fetch("/api/game", requestOptions).then((res) => res.json());
   }
 
   public joinGame(gameId: string, nickname: string) {
@@ -16,7 +16,7 @@ export default class Api {
       headers: HEADERS,
       body: JSON.stringify({ nickname: nickname }),
     };
-    return fetch(`/game/${gameId}/join`, requestOptions).then((res) =>
+    return fetch(`/api/game/${gameId}/join`, requestOptions).then((res) =>
       res.json()
     );
   }
@@ -27,7 +27,7 @@ export default class Api {
       headers: HEADERS,
       body: JSON.stringify({ nickname: nickname, action: action }),
     };
-    return fetch(`/game/${gameId}/action`, requestOptions).then((res) =>
+    return fetch(`/api/game/${gameId}/action`, requestOptions).then((res) =>
       res.json()
     );
   }
@@ -37,7 +37,9 @@ export default class Api {
       method: "GET",
       headers: HEADERS,
     };
-    return fetch(`/game/${gameId}`, requestOptions).then((res) => res.json());
+    return fetch(`/api/game/${gameId}`, requestOptions).then((res) =>
+      res.json()
+    );
   }
 
   public stat() {
@@ -45,6 +47,6 @@ export default class Api {
       method: "GET",
       headers: HEADERS,
     };
-    return fetch(`/stat`, requestOptions).then((res) => res.json());
+    return fetch(`/api/stat`, requestOptions).then((res) => res.json());
   }
 }
