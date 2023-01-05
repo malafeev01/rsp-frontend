@@ -1,0 +1,7 @@
+.game-logo {
+  background-image: url("../../assets/rsp_logo.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  margin-bottom: 40px;
+}

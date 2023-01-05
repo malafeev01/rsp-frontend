@@ -1,0 +1,23 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+.home-header {
+  margin-top: 30px;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.home-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 14px;
+}

@@ -1,0 +1,40 @@
+.game-score-table {
+  margin-bottom: 20px;
+}
+.game-score-table td {
+  border: 1px solid rgb(165, 165, 165);
+  font-size: 16px;
+  text-align: left;
+}
+
+.game-round-score {
+  background-color: rgb(211, 211, 211);
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 25px;
+}
+
+.game-round-player {
+  padding-left: 5px;
+  padding-right: 25px;
+}
+
+.game-current-round {
+  margin-bottom: 25px;
+}
+
+.win {
+  background-color: #bcf8bc;
+}
+
+.lost {
+  background-color: #ffd3d3;
+}
+
+.tie {
+  background-color: #fff9b9;
+}
+
+.no-res {
+  background-color: white;
+}

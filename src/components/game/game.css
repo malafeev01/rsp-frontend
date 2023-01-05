@@ -1,0 +1,86 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-between;
+  height: 100%;
+}
+.game-actions-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  height: 100%;
+}
+
+.game-action {
+  width: 50px;
+  height: 50px;
+  border-radius: 50;
+  background-size: cover;
+  transition: 0.3s;
+}
+.game-action-disabled {
+  pointer-events: none;
+  filter: opacity(0.3);
+}
+.game-action-selected {
+  transform: scale(1.3);
+}
+
+.game-action:hover {
+  cursor: pointer;
+  animation: resize;
+  transform: scale(1.3);
+}
+
+.game-action-rock {
+  background-image: url("../../assets/rock1.png");
+}
+
+.game-action-scissors {
+  background-image: url("../../assets/scissors1.png");
+}
+
+.game-action-paper {
+  background-image: url("../../assets/paper1.png");
+}
+
+.game-score {
+  margin-bottom: 25px;
+}
+
+.round-results {
+  gap: 20px;
+  background-color: white;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.disabled-container {
+  pointer-events: none;
+  filter: opacity(0.1);
+}
+
+.game-actions-helper {
+  margin-bottom: 20px;
+}
+
+.game-actions-helper-hide {
+  display: none;
+}
+
+.game-exit-helper {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.game-flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

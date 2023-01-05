@@ -1,0 +1,24 @@
+.results-table {
+  margin-bottom: 25px;
+}
+.results-table th,
+.results-table td {
+  border: 1px solid rgb(165, 165, 165);
+  border-collapse: collapse;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.game-results-round-tie {
+  background-color: #fff9b9;
+}
+.game-results-round-win {
+  background-color: #bcf8bc;
+}
+.game-results-round-lost {
+  background-color: #ffd3d3;
+}
+
+.game-results-label {
+  margin-bottom: 15px;
+}

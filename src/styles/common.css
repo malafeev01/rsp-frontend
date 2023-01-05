@@ -1,0 +1,69 @@
+body {
+  font-weight: 200;
+  font-family: "Rubik";
+}
+
+.common-btn {
+  background-color: #f4f4f4;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.common-btn:hover {
+  cursor: pointer;
+  background-color: #e4e3e3;
+}
+
+.common-btn:active {
+  cursor: pointer;
+  background-color: #d9d8d8;
+}
+
+.common-input {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #b5b4b4;
+}
+
+.copy-btn:hover {
+  color: black;
+  cursor: pointer;
+  filter: opacity(1);
+  border-radius: 1px;
+}
+
+.error {
+  color: #9f0505;
+  background-color: rgb(255 223 223);
+  padding: 15px;
+  border: 1px solid #fabfbf;
+  border-radius: 5px;
+}
+
+.common-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.common-header-1 {
+  font-size: 32px;
+}
+
+.common-header-2 {
+  font-size: 26px;
+}
+
+body {
+  font-size: 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
