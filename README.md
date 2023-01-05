@@ -1,4 +1,4 @@
-# Getting Started with Rock, Scissors, Paper fronted project
+# Rock, Scissors, Paper frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
