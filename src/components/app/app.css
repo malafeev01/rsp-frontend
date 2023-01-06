@@ -17,13 +17,15 @@
   width: 100%;
   text-align: center;
   font-size: 14px;
+  padding-bottom: 15px;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 98vh;
+  height: 100vh;
+  min-height: 100vh;
   gap: 20px;
 }
 
