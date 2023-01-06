@@ -20,12 +20,22 @@
   padding-bottom: 15px;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .app-container {
+    min-height: -webkit-fill-available;
+  }
+}
+
+@supports not (-webkit-touch-callout: none) {
+  .app-container {
+    min-height: 100vh;
+  }
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  min-height: 100vh;
   gap: 20px;
 }
 
