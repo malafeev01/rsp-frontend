@@ -17,6 +17,9 @@ export function CreateGame() {
   const api = new Api();
 
   const createGame = () => {
+    if (!nickname || !maxRounds) {
+      return setError("Please enter valid nickname and max rounds");
+    }
     api
       .createGame(nickname, maxRounds)
       .then((data) => {
@@ -45,6 +48,7 @@ export function CreateGame() {
                   className="common-input"
                   value={nickname}
                   onChange={(e) => setNickname(e.target.value.trim())}
+                  maxLength={16}
                 ></input>
               </td>
             </tr>
@@ -57,6 +61,7 @@ export function CreateGame() {
                   value={maxRounds}
                   type="number"
                   max="10"
+                  min="1"
                   onChange={(e) => {
                     let value = parseInt(e.target.value);
                     if (value > 10) {

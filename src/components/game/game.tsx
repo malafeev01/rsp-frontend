@@ -62,11 +62,28 @@ export function Game() {
         })
         .catch(() => setError("Unknown server error"));
     },
+    onClose: () => {
+      setError("Connection with server has been lost");
+    },
+    onOpen: () => {
+      setError("");
+      // Sending a message to WS server to register the connection
+      sendJsonMessage({ action: "add", nickname: nickname });
+    },
     onError: () => {
       setError("Unknown WS server error");
     },
-    reconnectAttempts: 10,
-    reconnectInterval: 300,
+    shouldReconnect: (closeEvent) => {
+      return true;
+    },
+    onReconnectStop: () => {
+      setError(
+        "Max attempts to reconnect are reached. Please refresh the window."
+      );
+    },
+    retryOnError: true,
+    reconnectAttempts: 50,
+    reconnectInterval: 3000,
   });
 
   useEffect(() => {
@@ -88,10 +105,6 @@ export function Game() {
         );
       })
       .catch(() => setError("Unknown server error"));
-
-    // Sending a message to WS server to register the connection
-    sendJsonMessage({ action: "add", nickname: nickname });
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -168,11 +181,13 @@ export function Game() {
             You will be able to continue this game any time, just save this game
             id {gameId}
           </div>
-        </div>
-        <GameScore game={game} nickname={nickname}></GameScore>
 
-        <div data-testid="current_round" className="game-current-round">
-          Current round: {currentRound + 1}
+          <div className="score-container">
+            <GameScore game={game} nickname={nickname}></GameScore>
+            <div data-testid="current_round" className="game-current-round">
+              Current round: {currentRound + 1}
+            </div>
+          </div>
         </div>
 
         {/* Showing round result in the end of the round */}

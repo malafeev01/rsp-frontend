@@ -59,7 +59,6 @@ export function GameResults(props: { game: GameType }) {
 
   return (
     <div className="common-container">
-      <div>This game is finished.</div>
       <div data-testid="game_result_label" className="game-results-label">
         {gameWinner ? (
           <>
@@ -69,17 +68,18 @@ export function GameResults(props: { game: GameType }) {
           <>There is no winner in this game.</>
         )}
       </div>
-      <table data-testid="game_result_table" className="results-table">
-        <thead>
-          <tr>
-            <th>Round</th>
-            <th>{p1Name} </th>
-            <th>{p2Name} </th>
-          </tr>
-        </thead>
-        <tbody>{tableRows}</tbody>
-      </table>
-
+      <div>
+        <table data-testid="game_result_table" className="results-table">
+          <thead>
+            <tr>
+              <th>Round</th>
+              <th>{p1Name} </th>
+              <th>{p2Name} </th>
+            </tr>
+          </thead>
+          <tbody>{tableRows}</tbody>
+        </table>
+      </div>
       <div
         className="common-btn"
         onClick={() => {

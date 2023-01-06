@@ -1,12 +1,33 @@
 .results-table {
-  margin-bottom: 25px;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 16px;
+  max-width: 560px;
 }
+
+@media (max-width: 450px) {
+  .results-table {
+    font-size: 12px;
+  }
+}
+
+.results-table th:nth-child(1) {
+  width: 20%;
+}
+.results-table th:nth-child(2) {
+  width: 40%;
+}
+.results-table th:nth-child(3) {
+  width: 40%;
+}
+
 .results-table th,
 .results-table td {
   border: 1px solid rgb(165, 165, 165);
   border-collapse: collapse;
   padding: 10px 15px;
   text-align: center;
+  word-break: break-all;
 }
 
 .game-results-round-tie {
@@ -20,5 +41,5 @@
 }
 
 .game-results-label {
-  margin-bottom: 15px;
+  font-size: 18px;
 }

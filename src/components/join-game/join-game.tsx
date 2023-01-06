@@ -18,6 +18,9 @@ export function JoinGame() {
   const navigate = useNavigate();
 
   const joinGame = () => {
+    if (!gameId || !nickname) {
+      return setError("Please enter valid Game ID and nickname");
+    }
     api
       .joinGame(gameId, nickname)
       .then((res) => {
@@ -56,6 +59,7 @@ export function JoinGame() {
                   className="common-input"
                   value={nickname}
                   onChange={(e) => setNickname(e.target.value.trim())}
+                  maxLength={16}
                 ></input>
               </td>
             </tr>

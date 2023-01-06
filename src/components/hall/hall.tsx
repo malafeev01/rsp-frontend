@@ -25,12 +25,18 @@ export function Hall() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const getIcon = (place: string): string => {
+    const placeMap = { "1": "\u{1F947}", "2": "\u{1F948}", "3": "\u{1F949}" };
+
+    return placeMap[place as keyof typeof placeMap] || place;
+  };
+
   const tableRows = [];
 
   for (let i = 0; i < stat.length; i++) {
     tableRows.push(
       <tr key={i}>
-        <td> {i + 1} </td>
+        <td> {getIcon(JSON.stringify(i + 1))} </td>
         <td> {stat[i].nickname} </td>
         <td> {stat[i].win_rounds}</td>
         <td> {stat[i].win_games}</td>

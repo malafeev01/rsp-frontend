@@ -1,8 +1,23 @@
+.hall-table {
+  table-layout: fixed;
+  width: 100%;
+  max-width: 500px;
+}
+
 .hall-table th,
 .hall-table td {
-  border: 1px solid rgb(165, 165, 165);
   border-collapse: collapse;
   padding: 10px 15px;
   text-align: center;
   font-size: 14px;
+}
+.hall-table tr {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+@media (max-width: 450px) {
+  .hall-table th,
+  .hall-table td {
+    font-size: 12px;
+  }
 }
