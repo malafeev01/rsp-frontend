@@ -1,10 +1,13 @@
-# Rock, Scissors, Paper frontend
+# Frontend part for Rock, Scissors, Paper online game.
 
 [![deploy](https://github.com/malafeev01/rsp-frontend/actions/workflows/main.yml/badge.svg)](https://github.com/malafeev01/rsp-frontend/actions/workflows/main.yml)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project stack:
+ - [React](https://github.com/facebook/create-react-app) with TypeScript.
+ - Standard React tools for testing(it's Jest under the hood).
+ - Prettier for code style.
 
-## Available Scripts
+## Available commands
 
 In the project directory, you can run:
 
@@ -12,9 +15,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm run prod`
 
@@ -31,14 +31,12 @@ Launches the prettier formatter for all the project files
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder.
 
 ### `npm run build-dev`
 
 Build development version of the app
+
+### What is difference between development and production verions ?
+There is only one difference between these two version - different addresses on WebSocket server.
+
